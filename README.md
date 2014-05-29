@@ -15,6 +15,8 @@ The date and time to be displayed are entered as the shortcode's content, i.e. b
 `[localize_time]` and `[/localize_time]` tags. The shortcode takes the following options:
 
 + `tz` - the timezone the shortcode's content is in. Defaults to the site's timezone.
+  Timezones are specified in any format recognized by
+  [PHP's DateTimeZone's contructor](http://www.php.net/manual/en/timezones.php).
 + `fmt` - a format string specifying how the original time should be displayed.
   Defaults to the site's date format followed by the site's time format followed by a
   timezone indicator. Specify either 'orig', which presents the time as entered by the
