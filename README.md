@@ -1,15 +1,15 @@
 Localize Time
 =============
 
-WordPress plugin that provides a shortcode to display times in user's local time.
+WordPress plugin that provides a shortcode to display times in the user's local timezone.
 
 ## Shortcode
 
 This WordPress plugin adds the `[localize_time]` shortcode. The shortcode allows an author
 to enter a date and time in any timezone (defaults to site's timezone). The shortcode displays
 the original time with timezone, followed by the same time specified in user's browser's
-timezone formatted correctly for the user's locale. If the original time is in the same
-timezone as the user's timezone the local time is not displayed.
+timezone formatted correctly for the user's locale. This is useful for announcing live events,
+e.g. a live online streaming event, to international audiences.
 
 The date and time to be displayed are entered as the shortcode's content, i.e. between the
 `[localize_time]` and `[/localize_time]` tags. The shortcode takes the following options:
@@ -28,6 +28,7 @@ The date and time to be displayed are entered as the shortcode's content, i.e. b
 + `before_local` - the string to precede the local time. Defaults to ' ('
 + `after_local`  - the string to follow  the local time. Defaults to ')'
 
+
 ### Example
 
 ```
@@ -41,3 +42,12 @@ For a user visiting the site from the America/Los_Angeles timezone, the above co
 ```
 
 Note that the display of the local time varies by timezone and (slightly) by browser.
+
+### FAQ
+
+Q. Can I change the way the local time is formatted?  
+A. No. The local time is displayed by the user's browser in a format appropriate for her locale. You can not override it.
+
+Q. What if the user is in the same timezone as the original time?  
+A. Users in the same timezone as the web site will see only the original time; the local time will not be displayed,
+as it would be repititious.
