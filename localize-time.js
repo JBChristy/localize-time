@@ -1,4 +1,5 @@
 /**
+ * localize-time.js - jQuery for Localize Time WordPress plugin
  */
 (function($){
   $('document').ready(function(){
