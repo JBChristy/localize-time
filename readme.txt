@@ -1,13 +1,13 @@
 === Localize Time ===
 Contributors: JBChristy
-Tags: time, timezone
+Tags: time, timezone, local time
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: trunk
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides a shortcode to display arbitray times in users' locale timezones.
+Provides a **`[localize_time]`** shortcode, which displays times in the user's local timezone.
 
 == Description ==
 
@@ -40,24 +40,24 @@ The shortcode takes the following options:
 
 Below are examples of using the shortcode. For these examples, the site's timezone is set to America/New_York (EST-5EDT) and the user is in the America/Los_Angeles (PST-8PDT) timezone.
 
-* Local time is in a different year and month from original time:  
-  `[localize_time]1/1/2014 1:00 am[/localize_time]`  
-  outputs:  
+* Local time is in a different year and month from original time:
+  `[localize_time]1/1/2014 1:00 am[/localize_time]`
+  outputs:
   January 1, 2014 1:00 am EST (12/31/2013, 10:00:00 PM PST)
 
-* Specify a time in timezone different from the site's:  
-  `[localize_time tz="Europe/Paris" ]July 14, 2014 19:00[/localize_time]`  
-  outputs:  
+* Specify a time in timezone different from the site's:
+  `[localize_time tz="Europe/Paris" ]July 14, 2014 19:00[/localize_time]`
+  outputs:
   July 14, 2014 7:00 pm CEST (7/14/2014, 10:00:00 AM PDT)
 
-* Specify a format for the original time:  
-  `[localize_time fmt="m/d/Y g:i A T"]June 14, 2014 6:30 AM[/localize_time]`  
-  outputs:  
+* Specify a format for the original time:
+  `[localize_time fmt="m/d/Y g:i A T"]June 14, 2014 6:30 AM[/localize_time]`
+  outputs:
   06/14/2014 6:30 AM EDT (6/14/2014, 3:30:00 AM PDT)
 
-* Specify a time in the same timezone as the user:  
-  `[localize_time tz="PST"]3pm Nov. 1, 2014[/localize_time]`  
-  outputs:  
+* Specify a time in the same timezone as the user:
+  `[localize_time tz="PST"]3pm Nov. 1, 2014[/localize_time]`
+  outputs:
   November 1, 2014 3:00 pm PDT
 
 
@@ -66,7 +66,7 @@ Note that the display of the local time varies by timezone and browser.
 
 == Installation ==
 
-1. Upload the `localize_time` directory to the `/wp-content/plugins/` directory
+1. Upload the `localize-time` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 
@@ -80,7 +80,7 @@ You can not change the format.
 = What if the user is in the same timezone as the original time? =
 
 If the user is in the same timezone as the original time, she will see only the original time;
-the local time will not be displayed, as it would be repititious. See the last example above.
+the local time will not be displayed, as it would be repetitious. See the last example above.
 
 = Can I style the times? =
 
@@ -91,16 +91,16 @@ and `.localize_time_local` to style the local times.
 == Screenshots ==
 
 1. Examples of entering the shortcode.
-2. How the shortcode displays in the US Pacific timezone.
+2. What the shortcode displays in the US Pacific timezone.
 
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial release
 
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.0 =
 Initial version of plugin
