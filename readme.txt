@@ -84,8 +84,8 @@ the local time will not be displayed, as it would be repititious. See the last e
 
 = Can I style the times? =
 
-Yes. In your theme's CSS target `.localize_time_orig` to style the original times and
-`.localize_time_local` to style the local times.
+Yes. In your theme's CSS target `.localize_time_orig` to style the original times
+and `.localize_time_local` to style the local times.
 
 
 == Screenshots ==
