@@ -62,11 +62,13 @@ Note that the display of the local time varies by timezone and browser.
 ## FAQ
 
 Q. Can I change the way the local time is formatted?  
-A. No. The local time is displayed by the user's browser in a format appropriate for her locale. You can not change the format.
+A. No. The local time is displayed by the user's browser in a format appropriate for her locale.
+You can not change the format.
 
 Q. What if the user is in the same timezone as the original time?  
-A. Users in the same timezone as the web site will see only the original time; the local time will not be displayed,
-as it would be repititious.
+A. If the user is in the same timezone as the original time, she will see only the original time;
+the local time will not be displayed, as it would be repititious. See the last example above.
 
 Q. Can I style the times?  
-A. Yes. In your theme's CSS target `.localize_time_orig` to style the original times and `.localize_time_local` to style the local times.
+A. Yes. In your theme's CSS target `.localize_time_orig` to style the original times and
+`.localize_time_local` to style the local times.
