@@ -11,64 +11,81 @@ Provides a shortcode to display arbitray times in users' locale timezones.
 
 == Description ==
 
-This WordPress plugin adds the `[localize_time]` shortcode. The shortcode allows an author
-to enter a date and time in any timezone (defaults to site's timezone). The shortcode displays
-the original time with timezone, followed by the same time specified in user's browser's
-timezone formatted correctly for the user's locale. If the original time is in the same
-timezone as the user's timezone the local time is not displayed.
+This WordPress plugin adds the **`[localize_time]`** shortcode. The shortcode allows an author
+to enter a date and time in any timezone. The shortcode displays the original time with
+timezone, followed by the same time in the user's timezone, formatted correctly for the
+user's locale. This is useful for announcing live events, e.g. a live online streaming
+event, to widely dispersed audiences.
 
 The date and time to be displayed are entered as the shortcode's content, i.e. between the
-`[localize_time]` and `[/localize_time]` tags. The shortcode takes the following options:
+**`[localize_time]`** and **`[/localize_time]`** tags. The time can be specified in almost
+any format that's recognizable as a date and time.
 
-+ `tz` - the timezone the shortcode's content is in. Defaults to the site's timezone.
-  Timezones are specified in any format recognized by
+The shortcode takes the following options:
+
++ **`tz`** - the timezone the shortcode's content is in. If this option is omitted, it defaults
+  to the site's timezone. Timezones are specified in any format recognized by
   [PHP's DateTimeZone](http://www.php.net/manual/en/timezones.php).
-+ `fmt` - a format string specifying how the original time should be displayed.
-  Defaults to the site's date format followed by the site's time format followed by a
-  timezone indicator. Specify either 'orig', which presents the time as entered by the
-  author, or a format string. The format string uses the same codes that are used on
-  WordPress's General Settings tab, i.e. codes specified by
-  [PHP's date() function](http://php.net/manual/en/function.date.php).
-  Note that the format of the local time is dictated by the user's (browser's) locale,
-  and is not configurable via the shortcode.
-+ `before_local` - the string to precede the local time. Defaults to ' ('
-+ `after_local`  - the string to follow  the local time. Defaults to ')'
++ **`fmt`** - a format string specifying how the original time should be displayed. If omitted,
+  it defaults to the site's date format followed by the site's time format followed by the
+  timezone. To output the original time exactly as entered (with the timezone), specify
+  **`fmt="orig"`**. Or you can enter a format string using the same codes that are used on
+  WordPress's General Settings tab. See
+  [full documentation on date / time format strings here](http://codex.wordpress.org/Formatting_Date_and_Time).
++ **`before_local`** - the string to precede the local time. Defaults to ' ('
++ **`after_local`**  - the string to follow  the local time. Defaults to ')'
 
-### Example
 
-```
-[localize_time tz="America/Toronto" fmt="m/d/Y g:i A T"]July 17, 2014 7:30 pm[/localize_time]
-```
+### Examples
 
-For a user visiting the site from the America/Los_Angeles timezone, the above code will display
+Below are examples of using the shortcode. For these examples, the site's timezone is set to America/New_York (EST-5EDT) and the user is in the America/Los_Angeles (PST-8PDT) timezone.
 
-```
-07/17/2014 7:30 PM EDT (7/17/2014 4:30:00 PM Pacific Daylight Time)
-```
+* Local time is in a different year and month from original time:  
+  `[localize_time]1/1/2014 1:00 am[/localize_time]`  
+  outputs:  
+  January 1, 2014 1:00 am EST (12/31/2013, 10:00:00 PM PST)
 
-Note that the display of the local time varies by timezone and (slightly) by browser.
+* Specify a time in timezone different from the site's:  
+  `[localize_time tz="Europe/Paris" ]July 14, 2014 19:00[/localize_time]`  
+  outputs:  
+  July 14, 2014 7:00 pm CEST (7/14/2014, 10:00:00 AM PDT)
+
+* Specify a format for the original time:  
+  `[localize_time fmt="m/d/Y g:i A T"]June 14, 2014 6:30 AM[/localize_time]`  
+  outputs:  
+  06/14/2014 6:30 AM EDT (6/14/2014, 3:30:00 AM PDT)
+
+* Specify a time in the same timezone as the user:  
+  `[localize_time tz="PST"]3pm Nov. 1, 2014[/localize_time]`  
+  outputs:  
+  November 1, 2014 3:00 pm PDT
+
+
+Note that the display of the local time varies by timezone and browser.
 
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload `localize_time` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= How do control the format of the localized time? =
+= Can I change the way the local time is formatted? =
 
-You don't. The localized time is formatted by the user's browser in a format appropriate for her locale.
+No. The local time is displayed by the user's browser in a format appropriate for her locale.
+You can not change the format.
+
+= What if the user is in the same timezone as the original time? =
+
+If the user is in the same timezone as the original time, she will see only the original time;
+the local time will not be displayed, as it would be repititious. See the last example above.
 
 = Can I style the times? =
 
-Yes. The original time is rendered in a span with class="localize_time_orig". The localized time is
-rendered in a span with class="localize_time_local". You can target these classes in your theme's CSS.
+Yes. In your theme's CSS target `.localize_time_orig` to style the original times and
+`.localize_time_local` to style the local times.
 
 
 == Screenshots ==
