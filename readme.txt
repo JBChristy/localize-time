@@ -40,26 +40,25 @@ The shortcode takes the following options:
 
 Below are examples of using the shortcode. For these examples, the site's timezone is set to America/New_York (EST-5EDT) and the user is in the America/Los_Angeles (PST-8PDT) timezone.
 
-* Local time is in a different year and month from original time:
-  `[localize_time]1/1/2014 1:00 am[/localize_time]`
-  outputs:
+* Local time is in a different year and month from original time:  
+  `[localize_time]1/1/2014 1:00 am[/localize_time]`  
+  outputs:  
   January 1, 2014 1:00 am EST (12/31/2013, 10:00:00 PM PST)
 
-* Specify a time in timezone different from the site's:
-  `[localize_time tz="Europe/Paris" ]July 14, 2014 19:00[/localize_time]`
-  outputs:
+* Specify a time in timezone different from the site's:  
+  `[localize_time tz="Europe/Paris" ]July 14, 2014 19:00[/localize_time]`  
+  outputs:  
   July 14, 2014 7:00 pm CEST (7/14/2014, 10:00:00 AM PDT)
 
-* Specify a format for the original time:
-  `[localize_time fmt="m/d/Y g:i A T"]June 14, 2014 6:30 AM[/localize_time]`
-  outputs:
+* Specify a format for the original time:  
+  `[localize_time fmt="m/d/Y g:i A T"]June 14, 2014 6:30 AM[/localize_time]`  
+  outputs:  
   06/14/2014 6:30 AM EDT (6/14/2014, 3:30:00 AM PDT)
 
-* Specify a time in the same timezone as the user:
-  `[localize_time tz="PST"]3pm Nov. 1, 2014[/localize_time]`
-  outputs:
+* Specify a time in the same timezone as the user:  
+  `[localize_time tz="PST"]3pm Nov. 1, 2014[/localize_time]`  
+  outputs:  
   November 1, 2014 3:00 pm PDT
-
 
 Note that the display of the local time varies by timezone and browser.
 
