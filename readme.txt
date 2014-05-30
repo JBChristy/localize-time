@@ -66,7 +66,7 @@ Note that the display of the local time varies by timezone and browser.
 
 == Installation ==
 
-1. Upload `localize_time` directory to the `/wp-content/plugins/` directory
+1. Upload the `localize_time` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 
@@ -98,3 +98,9 @@ and `.localize_time_local` to style the local times.
 
 = 1.0 =
 * Initial release
+
+
+== Upgrade Notice ==
+
+= 1.0 =
+Initial version of plugin
