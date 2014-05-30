@@ -13,17 +13,20 @@ user's locale. This is useful for announcing live events, e.g. a live online str
 event, to widely dispersed audiences.
 
 The date and time to be displayed are entered as the shortcode's content, i.e. between the
-**`[localize_time]`** and **`[/localize_time]`** tags. The shortcode takes the following options:
+**`[localize_time]`** and **`[/localize_time]`** tags. The time can be specified in almost
+any format that's recognizable as a date and time.
+
+The shortcode takes the following options:
 
 + **`tz`** - the timezone the shortcode's content is in. If this option is omitted, it defaults
   to the site's timezone. Timezones are specified in any format recognized by
   [PHP's DateTimeZone](http://www.php.net/manual/en/timezones.php).
 + **`fmt`** - a format string specifying how the original time should be displayed. If omitted,
   it defaults to the site's date format followed by the site's time format followed by the
-  timezone. Specify either **`orig`**, which presents the time as entered by the
-  author, or a format string. The format string uses the same codes that are used on
+  timezone. To output the original time exactly as entered (with the timezone), specify
+  **`fmt="orig"`**. Or you can enter a format string using the same codes that are used on
   WordPress's General Settings tab. See
-  [full documentation here](http://codex.wordpress.org/Formatting_Date_and_Time).
+  [full documentation on date / time format strings here](http://codex.wordpress.org/Formatting_Date_and_Time).
 + **`before_local`** - the string to precede the local time. Defaults to ' ('
 + **`after_local`**  - the string to follow  the local time. Defaults to ')'
 
